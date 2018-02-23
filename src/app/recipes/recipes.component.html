@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-xs-12">
+      <ngx-carousel [inputs]="carouselConfig">
+        <ngx-item *ngFor="let item of items" NgxCarouselItem>
+          <div >
+            <!-- <h3>{{item.title}}</h3> -->
+            <img style="max-height:200px;width: 100%" [src]="item.title" alt="not available" />
+          </div>
+        </ngx-item>
+        <button NgxCarouselPrev class="leftRs">&lt;</button>
+        <button NgxCarouselNext class="rightRs">&gt;</button>
+      </ngx-carousel>
+    </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <app-recipe-list></app-recipe-list>
+  </div>
+  <div class="col-md-7">
+    <app-recipe-detail *ngIf="selectedRecipe; else infoText"
+    [recipe]= "selectedRecipe" ></app-recipe-detail>
+      <ng-template #infoText>
+        <p>Please select a recipe</p>
+      </ng-template>
+  </div>
+</div>

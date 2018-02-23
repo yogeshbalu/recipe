@@ -1,0 +1,9 @@
+<app-header (featureSelected)= "onNavigate($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *appBasicCondition="loadedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *appBasicCondition="loadedFeature === 'shopping-list'"></app-shopping-list>
+    </div>
+  </div>
+</div>
